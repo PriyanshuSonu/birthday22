@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Labu 🎉</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body {
+    margin: 0;
+    background: #0c0a09;
+    color: white;
+    font-family: sans-serif;
+}
+
+/* Background */
+.aurora {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background:
+        radial-gradient(circle at 40% 40%, rgba(236,72,153,0.4), transparent 30%),
+        radial-gradient(circle at 70% 30%, rgba(168,85,247,0.3), transparent 30%),
+        radial-gradient(circle at 30% 70%, rgba(59,130,246,0.3), transparent 30%);
+    filter: blur(60px);
+    z-index: 0;
+}
+
+/* Card */
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+/* Steps */
+.step { display: none; }
+.step.active { display: block; }
+
+/* Polaroid */
+.polaroid {
+    background: white;
+    padding: 10px 10px 30px;
+    border-radius: 6px;
+    display: inline-block;
+}
+.polaroid img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 4px;
+}
+
+/* Button */
+.btn {
+    background: linear-gradient(135deg,#ec4899,#ef4444);
+    padding: 10px;
+    border-radius: 999px;
+    margin-top: 15px;
+    width: 100%;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="aurora"></div>
+
+<div class="flex justify-center items-center min-h-screen p-4 relative z-10">
+
+<div class="w-full max-w-md text-center space-y-6">
+
+<!-- STEP 1 -->
+<div id="step1" class="step active card">
+<h1 class="text-2xl sm:text-4xl font-bold">Hello Guyz ❤️</h1>
+<p class="mt-2">Akta chotto prochesta 😊</p>
+<button class="btn" onclick="next(1)">Let’s Go</button>
+</div>
+
+<!-- STEP 2 -->
+<div id="step2" class="step card">
+<h1 class="text-2xl sm:text-4xl font-bold">Happy Birthday Labu 🎉</h1>
+<p class="mt-2">Aro ekta bochor buri 😁</p>
+<button class="btn" onclick="next(2)">Next</button>
+</div>
+
+<!-- STEP 3 -->
+<div id="step3" class="step card">
+<h1 class="text-2xl sm:text-4xl font-bold">Kichu jinis ❤️</h1>
+<p class="mt-3">Tor hasi 😂</p>
+<p>That Smile 😊</p>
+<p>Your spirit 🌟</p>
+<button class="btn" onclick="next(3)">Next</button>
+</div>
+
+<!-- STEP 4 (YOUR REAL PHOTO) -->
+<div id="step4" class="step card">
+<h1 class="text-2xl sm:text-4xl font-bold">Our Memory 📸</h1>
+
+<div class="polaroid mt-4">
+<img src="./WhatsApp%20Image%202026-04-28%20at%2012.15.23%20AM.jpeg" alt="Our Photo">
+<p style="color:black; font-weight:bold; margin-top:10px;">
+Amader best photo ❤️
+</p>
+</div>
+
+<p class="mt-3">Amra achi bro ❤️</p>
+<button class="btn" onclick="next(4)">Next</button>
+</div>
+
+<!-- STEP 5 -->
+<div id="step5" class="step card">
+<h1 class="text-2xl sm:text-4xl font-bold">My Wish 🎂</h1>
+<p class="mt-2">Always happy thakbi ❤️</p>
+
+<button class="btn" onclick="alert('🎉 Happy Birthday! 🎉')">
+Celebrate 🎉
+</button>
+</div>
+
+</div>
+</div>
+
+<script>
+function next(n){
+    document.getElementById("step"+n).classList.remove("active");
+    document.getElementById("step"+(n+1)).classList.add("active");
+}
+</script>
+
+</body>
+</html>
